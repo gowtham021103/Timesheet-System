@@ -247,3 +247,78 @@
   border-radius: 6px;
   font-size: 1rem;
 }
+
+@media (max-width: 768px) {
+  .manager-layout {
+    flex-direction: column;
+  }
+
+  .manager-sidebar, .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .manager-sidebar-logo, .sidebar-logo {
+    display: none;
+  }
+
+  .manager-sidebar-nav, .sidebar-nav {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 8px 12px;
+    margin: 0;
+    gap: 8px;
+    scrollbar-width: none;
+  }
+
+  .manager-sidebar-nav::-webkit-scrollbar, .sidebar-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .manager-nav-item, .sidebar a {
+    display: inline-flex;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+
+  .manager-main {
+    margin-left: 0;
+  }
+
+  .manager-header {
+    height: auto;
+    padding: 12px 16px;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .manager-content {
+    padding: 16px;
+  }
+
+  .manager-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .manager-table-container {
+    overflow-x: auto;
+  }
+
+  .manager-table {
+    width: 100%;
+    min-width: 600px;
+  }
+
+  .manager-modal-content {
+    width: 90%;
+    padding: 24px 16px;
+  }
+}
