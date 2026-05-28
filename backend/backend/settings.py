@@ -25,7 +25,14 @@ SECRET_KEY = 'django-insecure-j@#zf@9w)4vll_dc0m4w1($hceaji!ml$)4j8tjjf5fzhmp#ae
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+import os
+
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1,localhost').split(',')
+
+# Automatically append Render's external hostname when running on Render
+render_external_host = os.getenv('RENDER_EXTERNAL_HOSTNAME')
+if render_external_host:
+    ALLOWED_HOSTS.append(render_external_host)
 
 
 # Application definition
@@ -130,4 +137,6 @@ AUTH_USER_MODEL = 'users.User'
 
 # CORS
 CORS_ALLOW_ALL_ORIGINS = True
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
