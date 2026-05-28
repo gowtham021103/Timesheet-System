@@ -17,6 +17,9 @@ axios.interceptors.request.use((config) => {
     backendUrl = isLocal ? 'http://127.0.0.1:8001' : 'https://timesheet-system-ray0.onrender.com';
   }
 
+  // Normalize backendUrl to remove trailing slash and trailing '/api' so we can do a clean replacement
+  backendUrl = backendUrl.replace(/\/$/, '').replace(/\/api$/, '');
+
   if (config.url && config.url.startsWith('http://127.0.0.1:8001')) {
     config.url = config.url.replace('http://127.0.0.1:8001', backendUrl);
   }
