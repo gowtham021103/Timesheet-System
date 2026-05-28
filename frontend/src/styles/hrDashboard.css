@@ -239,11 +239,17 @@
   }
 
   .hr-sidebar, .sidebar {
-    position: static;
+    position: sticky;
+    top: 0;
     width: 100%;
     height: auto;
     flex-direction: row;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background: rgba(30, 41, 59, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   }
 
   .hr-sidebar-logo, .sidebar-logo {
@@ -255,9 +261,11 @@
     flex-direction: row;
     overflow-x: auto;
     white-space: nowrap;
-    padding: 8px 12px;
+    padding: 8px 16px;
     margin: 0;
+    gap: 6px;
     scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   .hr-sidebar-nav::-webkit-scrollbar, .sidebar-nav::-webkit-scrollbar {
@@ -266,14 +274,31 @@
 
   .hr-nav-item, .sidebar a {
     display: inline-flex;
-    padding: 10px 16px;
-    font-size: 0.9rem;
+    align-items: center;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.65);
+    border-radius: 20px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hr-nav-item:hover, .sidebar a:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #fff;
+  }
+
+  .hr-nav-item.active, .sidebar .active {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    border-left: none;
   }
 
   .hr-logout-btn {
     border-top: none;
-    border-left: 1px solid #334155;
-    padding: 10px 16px;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 6px 12px;
+    font-size: 0.8rem;
   }
 
   .hr-main-content {
@@ -282,12 +307,16 @@
   }
 
   .hr-header {
-    padding: 16px;
+    padding: 12px 16px;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
     text-align: center;
     align-items: center;
     margin-bottom: 20px;
+  }
+
+  .hr-header-title h1 {
+    font-size: 1.1rem !important;
   }
 
   .hr-stats-grid {
@@ -296,9 +325,18 @@
     margin-bottom: 24px;
   }
 
+  .hr-stat-card {
+    padding: 16px;
+  }
+
+  .hr-stat-value {
+    font-size: 1.75rem;
+  }
+
   .hr-table-card {
-    padding: 16px 8px;
+    padding: 12px 8px;
     overflow-x: auto;
+    border-radius: 8px;
   }
 
   .hr-table {
@@ -306,8 +344,14 @@
     min-width: 600px;
   }
 
+  .hr-table th, .hr-table td {
+    padding: 12px 8px;
+    font-size: 0.8rem;
+  }
+
   .hr-form-card {
     padding: 24px 16px;
     margin: 0 8px;
+    border-radius: 8px;
   }
 }

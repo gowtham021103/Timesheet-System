@@ -216,12 +216,18 @@
   }
 
   .client-sidebar, .sidebar {
-    position: static;
+    position: sticky;
+    top: 0;
     width: 100%;
     height: auto;
     flex-direction: row;
     padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background: rgba(15, 23, 42, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   }
 
   .client-sidebar-logo, .sidebar-logo {
@@ -233,10 +239,11 @@
     flex-direction: row;
     overflow-x: auto;
     white-space: nowrap;
-    padding: 8px 12px;
+    padding: 8px 16px;
     margin: 0;
-    gap: 8px;
+    gap: 6px;
     scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   .client-sidebar-nav::-webkit-scrollbar, .sidebar-nav::-webkit-scrollbar {
@@ -245,8 +252,26 @@
 
   .client-nav-item, .sidebar a {
     display: inline-flex;
-    padding: 10px 16px;
-    font-size: 0.9rem;
+    align-items: center;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.65);
+    border-radius: 20px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .client-nav-item:hover,
+  .client-nav-item.active,
+  .sidebar a:hover,
+  .sidebar .active {
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #fff;
+  }
+
+  .client-nav-item.active,
+  .sidebar .active {
+    background-color: rgba(255, 255, 255, 0.12);
   }
 
   .client-main {
@@ -261,6 +286,10 @@
     text-align: center;
   }
 
+  .client-header h2 {
+    font-size: 1.1rem !important;
+  }
+
   .client-content {
     padding: 16px;
   }
@@ -270,12 +299,27 @@
     gap: 16px;
   }
 
+  .client-stat-card {
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  .client-stat-card p {
+    font-size: 1.5rem;
+  }
+
   .client-table-container {
     overflow-x: auto;
+    border-radius: 8px;
   }
 
   .client-table {
     width: 100%;
     min-width: 600px;
+  }
+
+  .client-table th, .client-table td {
+    padding: 12px 16px;
+    font-size: 0.8rem;
   }
 }
