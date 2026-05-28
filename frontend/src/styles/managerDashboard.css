@@ -1,0 +1,249 @@
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #0F172A;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px 16px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.sidebar a:hover {
+  background-color: #1E293B;
+}
+
+.sidebar .active {
+  background-color: #334155;
+}
+
+/* Manager Dashboard CSS */
+:root {
+  --manager-primary: #3f51b5; /* Indigo */
+  --manager-primary-hover: #303f9f;
+  --manager-bg: #f5f5f5;
+  --manager-sidebar: #1a237e;
+  --manager-sidebar-text: #ffffff;
+  --manager-header: #ffffff;
+  --manager-card-bg: #ffffff;
+  --manager-border: #e0e0e0;
+}
+
+.manager-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--manager-bg);
+  font-family: 'Inter', sans-serif;
+}
+
+.manager-sidebar {
+  width: 250px;
+  background-color: var(--manager-sidebar);
+  color: var(--manager-sidebar-text);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+}
+
+.manager-sidebar-logo {
+  padding: 0 24px 32px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 24px;
+}
+
+.manager-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 12px;
+}
+
+.manager-nav-item {
+  padding: 12px 16px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.7);
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.manager-nav-item:hover, .manager-nav-item.active {
+  background-color: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+.manager-main {
+  flex: 1;
+  margin-left: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.manager-header {
+  height: 72px;
+  background-color: var(--manager-header);
+  border-bottom: 1px solid var(--manager-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.manager-content {
+  padding: 32px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.manager-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.manager-stat-card {
+  background: var(--manager-card-bg);
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid var(--manager-border);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.manager-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.manager-stat-card h3 {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.manager-stat-card p {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--manager-primary);
+}
+
+.manager-table-container {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--manager-border);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.manager-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.manager-table th {
+  background: #f8f9fa;
+  padding: 16px;
+  text-align: left;
+  font-size: 0.85rem;
+  color: #666;
+  border-bottom: 1px solid var(--manager-border);
+}
+
+.manager-table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--manager-border);
+  font-size: 0.95rem;
+}
+
+.manager-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.manager-btn-primary {
+  background-color: var(--manager-primary);
+  color: white;
+}
+
+.manager-btn-primary:hover {
+  background-color: var(--manager-primary-hover);
+}
+
+.manager-btn-success {
+  background-color: #2e7d32;
+  color: white;
+}
+
+.manager-btn-success:hover {
+  background-color: #1b5e20;
+}
+
+.manager-btn-danger {
+  background-color: #d32f2f;
+  color: white;
+}
+
+.manager-btn-danger:hover {
+  background-color: #c62828;
+}
+
+/* Modals */
+.manager-modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.manager-modal-content {
+  background: #fff;
+  padding: 32px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.manager-form-field {
+  margin-bottom: 16px;
+}
+
+.manager-form-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.manager-form-field input, .manager-form-field select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}

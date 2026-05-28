@@ -1,0 +1,258 @@
+.teamlead-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.teamlead-sidebar {
+  width: 250px;
+  background-color: #1a237e;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.teamlead-sidebar-logo {
+  padding: 24px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  letter-spacing: 1px;
+}
+
+.teamlead-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
+  flex: 1;
+}
+
+.teamlead-nav-item {
+  padding: 16px 24px;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  border-left: 4px solid transparent;
+}
+
+.teamlead-nav-item:hover, .teamlead-nav-item.active {
+  background-color: rgba(255,255,255,0.1);
+  color: white;
+  border-left: 4px solid #00bcd4;
+}
+
+.teamlead-nav-item.logout {
+  margin-top: auto;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.teamlead-main {
+  flex: 1;
+  margin-left: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #0F172A;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px 16px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.sidebar a:hover {
+  background-color: #1E293B;
+}
+
+.sidebar .active {
+  background-color: #334155;
+}
+
+/* Team Lead Dashboard Styles */
+.teamlead-header {
+  height: 70px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.teamlead-header h2 {
+  margin: 0;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.teamlead-content {
+  padding: 32px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.teamlead-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.teamlead-stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+}
+
+.teamlead-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.teamlead-stat-card h3 {
+  margin: 0 0 16px 0;
+  color: #666;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.teamlead-stat-card p {
+  margin: 0;
+  color: #1a237e;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.teamlead-table-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.teamlead-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.teamlead-table th, .teamlead-table td {
+  padding: 16px 24px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.teamlead-table th {
+  background-color: #fafafa;
+  color: #555;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.teamlead-table tr:hover {
+  background-color: #f9fbfd;
+}
+
+.teamlead-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.teamlead-btn-primary {
+  background-color: #1a237e;
+  color: white;
+}
+
+.teamlead-btn-primary:hover {
+  background-color: #12185b;
+}
+
+.teamlead-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.teamlead-modal-content {
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.teamlead-modal-content h3 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  color: #333;
+}
+
+.teamlead-form-field {
+  margin-bottom: 20px;
+}
+
+.teamlead-form-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #444;
+}
+
+.teamlead-form-field input, .teamlead-form-field select, .teamlead-form-field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.teamlead-status-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.status-pending { background-color: #fff3cd; color: #856404; }
+.status-approved { background-color: #d4edda; color: #155724; }
+.status-rejected { background-color: #f8d7da; color: #721c24; }
+.status-active { background-color: #e8eaf6; border: 1px solid #ddd; color: #1a237e; }
